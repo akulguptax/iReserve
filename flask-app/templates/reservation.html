@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block content %}
+<div class="card mb-5">
+  <div class="card-body">
+    <div id="message" class="" role="alert"></div>
+    <!-- ACCORDION BEGIN -->
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+            Your Reservations
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+          <div class="accordion-body">
+            <!-- TABLE BEGIN -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Building</th>
+                  <th scope="col">Room</th>
+                  {% if all_res %}
+                  <th scope="col">Reserver</th>
+                  {% endif %}
+                  <th scope="col">Associated Group</th>
+                  <th scope="col">Start Time</th>
+                  <th scope="col">End Time</th>
+                  {% if not all_res %}
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                  {% endif %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for r in queried_reservations %}
+                <tr id="table-row-{{ r.ReservationID }}">
+                  <td class="align-middle">{{ r.BuildingName }}</td>
+                  <td class="align-middle">{{ r.RoomNumber }}</td>
+                  {% if all_res %}
+                  <td class="align-middle">{{ r.FirstName }} {{ r.LastName }}</td>
+                  {% endif %}
+                  <td class="align-middle" id="table-group-entry-{{ r.ReservationID }}">{{ r.GroupName }}</td>
+                  <td class="align-middle">{{ r.StartTime }}</td>
+                  <td class="align-middle">{{ r.EndTime }}</td>
+                  {% if not all_res %}
+                  <td class="align-middle">
+                    <button type="button" class="btn btn-outline-warning d-flex me-2 btn-block" data-bs-toggle="modal" data-bs-target="#updateModal" data-bs-rid="{{ r.ReservationID }}">Update</button>
+                  </td>
+                  <td class="align-middle">
+                    <button type="button" class="btn btn-outline-danger d-flex me-2 btn-block" data-bs-toggle="modal" data-bs-target="#confirmModal" data-bs-rid="{{ r.ReservationID }}" meta-data-rnum="{{ r.RoomNumber }}" meta-data-building="{{ r.BuildingName }}" meta-data-start="{{ r.StartTime }}">Delete</button>
+                  </td>
+                  {% endif %}
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            <!-- TABLE END -->
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+            Reservations From Your Groups
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+          <div class="accordion-body">
+            <!-- TABLE BEGIN -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Building</th>
+                  <th scope="col">Room</th>
+                  <th scope="col">Reserver</th>
+                  <th scope="col">Associated Group</th>
+                  <th scope="col">Start Time</th>
+                  <th scope="col">End Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for r in group_reservations %}
+                <tr id="table-row-all-res-{{ r.ReservationID }}">
+                  <td class="align-middle">{{ r.BuildingName }}</td>
+                  <td class="align-middle">{{ r.RoomNumber }}</td>
+                  <td class="align-middle">{{ r.FirstName }} {{ r.LastName }}</td>
+                  <td class="align-middle" id="table-group-entry-{{ r.ReservationID }}">{{ r.GroupName }}</td>
+                  <td class="align-middle">{{ r.StartTime }}</td>
+                  <td class="align-middle">{{ r.EndTime }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            <!-- TABLE END -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ACCORDION END -->
+  </div>
+</div>
+<!-- DELETE CONFIRMATION-->
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmModalLabel">Delete Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p></p>
+        <form id="delete_res_form" onsubmit="return delete_reservation(event);">
+          <button type="button" class="btn btn-outline-secondary me-2" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-outline-danger me-2" data-bs-dismiss="modal">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- DELETE CONFIRMATION -->
+<!-- UPDATE CONFIRMATION -->
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateModalLabel">Update Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="update_res_form" onsubmit="return try_to_update_reservation(event);">
+          <label for="groupid">Change your reservation's group:</label>
+          <select id="groupid" class="form-select mb-3" aria-label="Select a Group" required>
+            <option selected="true" disabled="disabled"></option>
+            {% for group in user_groups %}
+            <option value="{{ group.GroupID }}">{{ group.GroupName }}</option>
+            {% endfor %}
+          </select>
+          <button type="button" class="btn btn-outline-secondary me-2" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-outline-warning me-2" data-bs-dismiss="modal">Update</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- UPDATE CONFIRMATION -->
+<script src="/static/js/update_reservation.js"></script>
+{% endblock %}
+{% block search_bar %}
+{% endblock %}

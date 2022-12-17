@@ -1,0 +1,10 @@
+flask
+Flask[async]
+folium
+flask_sqlalchemy
+mysqlclient
+python-dotenv
+waitress
+pandas
+mysql-connector-python
+IPython

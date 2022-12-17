@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block head %}
+  <!-- {{ super() }} -->
+  <!-- <style type="text/css">
+    .important { color: #336699; }
+  </style> -->
+{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <h3>Find a Time</h3>
+    <form id="reserveform" method="get" action="{{ url_for('make_reservation') }}">
+      <div class="form-group mb-3">
+        <label for="meeting-time">Choose a start time for your reservation:</label>
+        <input type="datetime-local" id="starttime" name="start" value="{{ start_preserved }}"
+          min="2022-04-01T00:00" step="3600" placeholder="Start Time" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-outline-primary">Search</button>
+    </form>
+    <br>
+    <div id="message" class="" role="alert">
+      
+    </div>
+  </div>
+</div>
+<div class="card mt-3">
+  <div class="card-body">
+    <h3>Select a Room</h3>
+    <form class="d-flex mb-3" method="get" action="{{ url_for('make_reservation') }}">
+      <input class="form-control me-2" type="search" value="{{ building }}" placeholder="Search for buildings..." aria-label="Search" name="building">
+      <input type="hidden" name="start" value="{{ start }}"/> 
+      <button class="btn btn-outline-success" id="search_rooms_button" type="submit">Search</button>
+    </form>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Region</th>
+          <th scope="col">Building Name</th>
+          <th scope="col">Room Number</th>
+          <th scope="col">Capacity</th>
+          <th scope="col">Popularity</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in queried_rooms %}
+        <tr id="table-row-{{ r.RoomID }}">
+          <td>{{ r.Region }}</th>
+          <td>{{ r.BuildingName }}</td>
+          <td>{{ r.RoomNumber }}</td>
+          <td>{{ r.RoomCapacity }}</td>
+          <td>{{ r.Popularity }}</td>
+          <td class="align-middle">
+            <button type="button" class="btn btn-outline-primary d-flex me-2" data-bs-toggle="modal" data-bs-target="#confirmModal" data-bs-roomid="{{ r.RoomID }}">Reserve</button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- RESERVATION CONFIRMATION -->
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmModalLabel">Select a Study Group</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="make_res_form" onsubmit="return try_to_make_reservation(event);">
+          <label for="groupid">Choose a group to make a reservation under:</label>
+          <select id="groupid" class="form-select mb-3" aria-label="Select a Group" required>
+            <option selected="true" disabled="disabled"></option>
+            {% for group in user_groups %}
+            <option value="{{ group.GroupID }}">{{ group.GroupName }}</option>
+            {% endfor %}
+          </select>
+          <button type="button" class="btn btn-outline-secondary me-2" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-outline-success me-2" data-bs-dismiss="modal">Confirm Reservation</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- RESERVATION CONFIRMATION -->
+<script src="/static/js/reserve.js"></script>
+{% endblock %}

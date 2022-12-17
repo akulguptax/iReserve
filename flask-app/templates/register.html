@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block content %}
+<div class="row justify-content-md-center my-3">
+  <div class="col col-lg-2"></div>
+  <div class="col-md-auto">
+    <div style="width: 100px; height: 100px;">
+      <img src="/static/images/favicon.png" width="100%" height="100%">
+    </div>
+  </div>
+  <div class="col col-lg-2"></div>
+</div>
+<div class="row justify-content-md-center">
+  <div class="col-md-auto">
+    <h3 style="color:white">Register for iReserve</h3>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-5">
+      <div id="message" class="" role="alert">
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-5">
+      <!-- register card-->
+      <div class="card">
+        <div class="card-body">
+          <form id="registerform" method="POST" onsubmit="return add_user_data();">
+            <div class="form-group row my-2">
+              <label for="first_name" class="col-sm-4 col-form-label">First Name:</label>
+              <div class="col">
+                <input type="text" class="form-control" id="first_name" required>
+              </div>
+            </div>
+
+            <div class="form-group row my-2">
+              <label for="last_name" class="col-sm-4 col-form-label">Last Name:</label>
+              <div class="col">
+                <input type="text" class="form-control" id="last_name" required>
+              </div>
+            </div>
+
+            <div class="form-group row my-2">
+              <label for="email" class="col-sm-4 col-form-label">Email:</label>
+              <div class="col">
+                <input type="text" class="form-control" id="email" required>
+              </div>
+            </div>
+
+            <div class="form-group row my-2">
+              <label for="password" class="col-sm-4 col-form-label">Password:</label>
+              <div class="col">
+                <input type="password" class="form-control" id="password" required>
+              </div>
+            </div>
+
+            <div class="form-group row my-2">
+              <label for="confirm_password" class="col-sm-4 col-form-label">Confirm:</label>
+              <div class="col">
+                <input type="password" class="form-control" id="confirm_password" required>
+              </div>
+            </div>
+
+            <div class="row justify-content-md-center px-2 my-3">
+              <button class="btn btn-outline-success btn-block" id="submit" type="submit">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- register card-->
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+<div class="container my-2">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-5">
+      <div class="card">
+        <div class="card-body">
+          <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+              <span style="color:black">Already have an account? <a href="/login">Sign in to iReserve</a>.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+
+<script src="/static/js/add_user_data.js"></script>
+{% endblock %}

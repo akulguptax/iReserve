@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block head %}
+  <!-- {{ super() }} -->
+  <!-- <style type="text/css">
+    .important { color: #336699; }
+  </style> -->
+  <script></script>
+{% endblock %}
+{% block content %}
+<div class="card mb-5">
+  <div class="card-body">
+    <form class="d-flex" method="get" action="{{ url_for('search_room') }}">
+      <input class="form-control me-2" type="search" placeholder="Search for buildings..." aria-label="Search" name="building">
+      <button class="btn btn-success d-flex me-2" id="search_rooms_button" type="submit">Search</button>
+    </form>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Building Name</th>
+          <th scope="col">Room Number</th>
+          <th scope="col">Capacity</th>
+          <th scope="col">Popularity</th>
+          <th scope="col">Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in queried_ratings %}    
+        <tr>
+          <th scope="row">{{loop.index}}</th>
+          <td>{{ r.BuildingName }}</td>
+          <td>{{ r.RoomNumber }}</td>
+          <td>{{ r.RoomCapacity }}</td>
+          <td>{{ r.Popularity }}</td>
+          <td>{{ r.StarRating }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+{%block javascript %}
+<!-- <script src="/static/js/rooms.js"></script> -->
+{% endblock %}

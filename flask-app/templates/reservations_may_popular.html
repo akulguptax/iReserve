@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block content %}
+<div class="card mb-5">
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Building Name</th>
+          <th scope="col">Average Popularity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in queried_reservations %}
+        <tr>
+          <th scope="row">{{loop.index}}</th>
+          <td>{{ r.BuildingName }}</td>
+          <td>{{ r.AVG_POPULARITY }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block head %}
+  <!-- {{ super() }} -->
+  <!-- <style type="text/css">
+    .important { color: #336699; }
+  </style> -->
+{% endblock %}
+{% block content %}
+<div class="card mb-5">
+  <div class="card-body">
+    <form class="d-flex" method="get" action="{{ url_for('search_users') }}">
+      <input class="form-control me-2" type="search" placeholder="Search for users..." aria-label="Search" name="user">
+      <input type="hidden" name="priority" value="{{ is_priority }}"/> 
+      <button class="btn btn-outline-success" id="search_users_button" type="submit">Search</button>
+    </form>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">User ID</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for u in queried_users %}
+        <tr>
+          <th scope="row">{{ u.UserID }}</th>
+          <td>{{ u.FirstName }}</td>
+          <td>{{ u.LastName }}</td>
+          <td>{{ u.Email }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

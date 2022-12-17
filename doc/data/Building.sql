@@ -1,0 +1,13 @@
+INSERT INTO `building` (BuildingID, BuildingName, Address, Region) VALUES (0, 'Wassaja Hall', '1202 S 1st St, Champaign, IL 61820', 'Ikenberry Commons');
+INSERT INTO `building` (BuildingID, BuildingName, Address, Region) VALUES (1, 'Nugent Hall', '207 E Gregory Dr, Champaign, IL 61820', 'Ikenberry Commons');
+INSERT INTO `building` (BuildingID, BuildingName, Address, Region) VALUES (2, 'Hopkins Hall', '1208 S 1st St, Champaign, IL 61820', 'Ikenberry Commons');
+INSERT INTO `building` (BuildingID, BuildingName, Address, Region) VALUES (3, 'Wardell Hall', '1012 W Illinois St, Urbana, IL 61801', 'Illinois Street Residence');
+INSERT INTO `building` (BuildingID, BuildingName, Address, Region) VALUES (4, 'Townsend Hall', '918 W Illinois St, Urbana, IL 61801', 'Illinois Street Residence');
+INSERT INTO `building` (BuildingID, BuildingName, Address, Region) VALUES (5, 'Weston Hall', '204 E Peabody Dr, Champaign, IL 61820', 'Ikenberry Commons');
+INSERT INTO `building` (BuildingID, BuildingName, Address, Region) VALUES (6, 'Scott Hall', '202 E Peabody Dr, Champaign, IL 61820', 'Ikenberry Commons');
+INSERT INTO `building` (BuildingID, BuildingName, Address, Region) VALUES (7, 'Bousfield Hall', '1214 S 1st St, Champaign, IL 61820', 'Ikenberry Commons');
+INSERT INTO `building` (BuildingID, BuildingName, Address, Region) VALUES (8, 'Carr Hall', '1001 W Pennsylvania Ave, Urbana, IL 61801', 'Pennsylvania Avenue Residence');
+INSERT INTO `building` (BuildingID, BuildingName, Address, Region) VALUES (9, 'Saunders Hall', '902 W College Ct, Urbana, IL 61801', 'Pennsylvania Avenue Residence');
+INSERT INTO `building` (BuildingID, BuildingName, Address, Region) VALUES (10, 'Babcock Hall', '1002 W College Ct, Urbana, IL 61801', 'Pennsylvania Avenue Residence');
+INSERT INTO `building` (BuildingID, BuildingName, Address, Region) VALUES (11, 'Oglesby Hall', '1005 W College Ct, Urbana, IL 61801', 'Florida Avenue Residence');
+INSERT INTO `building` (BuildingID, BuildingName, Address, Region) VALUES (12, 'Trelease Hall', '901 W College Ct, Urbana, IL 61801', 'Florida Avenue Residence');

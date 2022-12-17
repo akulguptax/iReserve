@@ -1,0 +1,17 @@
+FROM python:3.9.12-bullseye
+
+RUN apt-get update && apt-get -y dist-upgrade
+
+COPY flask-app/requirements.txt /
+
+RUN pip install -r requirements.txt
+
+COPY /flask-app/ /flaskr
+
+WORKDIR /flaskr
+
+EXPOSE 8080
+
+ENTRYPOINT [ "/bin/sh" ]
+
+CMD [ "runner.sh" ]

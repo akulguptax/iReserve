@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ef46960d5485ccc62b67c97e3da78129 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_ef46960d5485ccc62b67c97e3da78129" ></div>
+        
+</body>
+<script>    
+    
+            var map_ef46960d5485ccc62b67c97e3da78129 = L.map(
+                "map_ef46960d5485ccc62b67c97e3da78129",
+                {
+                    center: [40.104, -88.228],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15.4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a7a690c9ad80fc6f68e646e93214bf64 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+            var circle_2ba7baa2045c0728bc36aa88d5c23933 = L.circle(
+                [40.09974605333407, -88.22109242320069],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.71764705882353, "stroke": true, "weight": 3}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+        var popup_04ae6b32033d239f28fd4e7ed3c59c43 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_330dd717bd2f325f36ecdf5db2f3b0b0 = $(`<div id="html_330dd717bd2f325f36ecdf5db2f3b0b0" style="width: 100.0%; height: 100.0%;">Babcock Hall: 1676</div>`)[0];
+            popup_04ae6b32033d239f28fd4e7ed3c59c43.setContent(html_330dd717bd2f325f36ecdf5db2f3b0b0);
+        
+
+        circle_2ba7baa2045c0728bc36aa88d5c23933.bindPopup(popup_04ae6b32033d239f28fd4e7ed3c59c43)
+        ;
+
+        
+    
+    
+            var circle_e4ffd227b532e51053d8b07f7fee0082 = L.circle(
+                [40.10197021567408, -88.23794140241456],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 24.729411764705883, "stroke": true, "weight": 3}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+        var popup_709b7a51f27a19c32264130866c21385 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7b6f63085b42b52bd9cc067298aa3b20 = $(`<div id="html_7b6f63085b42b52bd9cc067298aa3b20" style="width: 100.0%; height: 100.0%;">Bousfield Hall: 2102</div>`)[0];
+            popup_709b7a51f27a19c32264130866c21385.setContent(html_7b6f63085b42b52bd9cc067298aa3b20);
+        
+
+        circle_e4ffd227b532e51053d8b07f7fee0082.bindPopup(popup_709b7a51f27a19c32264130866c21385)
+        ;
+
+        
+    
+    
+            var circle_2c364120e3e4a23f4ffeecd0d499545b = L.circle(
+                [40.10046314622389, -88.22091966008513],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.223529411764705, "stroke": true, "weight": 3}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+        var popup_0b97fc18345e43636ce6eaf1e123fbd8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_169932bf8138d279aceda4280b9d5f0d = $(`<div id="html_169932bf8138d279aceda4280b9d5f0d" style="width: 100.0%; height: 100.0%;">Carr Hall: 1549</div>`)[0];
+            popup_0b97fc18345e43636ce6eaf1e123fbd8.setContent(html_169932bf8138d279aceda4280b9d5f0d);
+        
+
+        circle_2c364120e3e4a23f4ffeecd0d499545b.bindPopup(popup_0b97fc18345e43636ce6eaf1e123fbd8)
+        ;
+
+        
+    
+    
+            var circle_d11e83f3fde85f05b9cdff91941128fb = L.circle(
+                [40.10261431404243, -88.23807960980253],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.894117647058824, "stroke": true, "weight": 3}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+        var popup_30b6820c79d24b2e18802bb18a3ed43c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ec1b8877d1ededb16878d5b9811a1edd = $(`<div id="html_ec1b8877d1ededb16878d5b9811a1edd" style="width: 100.0%; height: 100.0%;">Hopkins Hall: 1606</div>`)[0];
+            popup_30b6820c79d24b2e18802bb18a3ed43c.setContent(html_ec1b8877d1ededb16878d5b9811a1edd);
+        
+
+        circle_d11e83f3fde85f05b9cdff91941128fb.bindPopup(popup_30b6820c79d24b2e18802bb18a3ed43c)
+        ;
+
+        
+    
+    
+            var circle_a5462f55c94abae2029be36791c38039 = L.circle(
+                [40.10408160408148, -88.23700284474393],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.258823529411766, "stroke": true, "weight": 3}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+        var popup_f30c9700adc0ea0f3815d72594e892ec = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ce108ec44860a15bfbfa093f59cca624 = $(`<div id="html_ce108ec44860a15bfbfa093f59cca624" style="width: 100.0%; height: 100.0%;">Nugent Hall: 1297</div>`)[0];
+            popup_f30c9700adc0ea0f3815d72594e892ec.setContent(html_ce108ec44860a15bfbfa093f59cca624);
+        
+
+        circle_a5462f55c94abae2029be36791c38039.bindPopup(popup_f30c9700adc0ea0f3815d72594e892ec)
+        ;
+
+        
+    
+    
+            var circle_666be9a53d22b7254963ca3515ad2a40 = L.circle(
+                [40.099138743373366, -88.22156030241462],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 61.67058823529412, "stroke": true, "weight": 3}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+        var popup_cf0528c2140d0abf1fc9cbbb830aaad8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_363eaca9bcdd7fc4e21f89b8af9affce = $(`<div id="html_363eaca9bcdd7fc4e21f89b8af9affce" style="width: 100.0%; height: 100.0%;">Oglesby Hall: 5242</div>`)[0];
+            popup_cf0528c2140d0abf1fc9cbbb830aaad8.setContent(html_363eaca9bcdd7fc4e21f89b8af9affce);
+        
+
+        circle_666be9a53d22b7254963ca3515ad2a40.bindPopup(popup_cf0528c2140d0abf1fc9cbbb830aaad8)
+        ;
+
+        
+    
+    
+            var circle_6ec01e8080e8bfbf88af4d849c8e00b4 = L.circle(
+                [40.099819894094225, -88.21975670241463],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.847058823529412, "stroke": true, "weight": 3}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+        var popup_e3a2eed8d58161238dfc2ad47726a199 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_453e512cbc4e524c916b88e3e6576163 = $(`<div id="html_453e512cbc4e524c916b88e3e6576163" style="width: 100.0%; height: 100.0%;">Saunders Hall: 1772</div>`)[0];
+            popup_e3a2eed8d58161238dfc2ad47726a199.setContent(html_453e512cbc4e524c916b88e3e6576163);
+        
+
+        circle_6ec01e8080e8bfbf88af4d849c8e00b4.bindPopup(popup_e3a2eed8d58161238dfc2ad47726a199)
+        ;
+
+        
+    
+    
+            var circle_7d652039909f55c90ebb0f58d0577fdb = L.circle(
+                [40.10199850531534, -88.23672557542628],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.494117647058824, "stroke": true, "weight": 3}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+        var popup_0450de6c8a926e934a6d617972d5deac = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6cd2330967fbc7b16f262c049ba91320 = $(`<div id="html_6cd2330967fbc7b16f262c049ba91320" style="width: 100.0%; height: 100.0%;">Scott Hall: 1317</div>`)[0];
+            popup_0450de6c8a926e934a6d617972d5deac.setContent(html_6cd2330967fbc7b16f262c049ba91320);
+        
+
+        circle_7d652039909f55c90ebb0f58d0577fdb.bindPopup(popup_0450de6c8a926e934a6d617972d5deac)
+        ;
+
+        
+    
+    
+            var circle_76a54fa8c0ea02ca7ff116ac27651135 = L.circle(
+                [40.11026515619361, -88.22097176008491],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.31764705882353, "stroke": true, "weight": 3}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+        var popup_3e5cfe48ce008022d54aa44ccf498e55 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d0faa987d2250af30a22491e5136241c = $(`<div id="html_d0faa987d2250af30a22491e5136241c" style="width: 100.0%; height: 100.0%;">Townsend Hall: 1472</div>`)[0];
+            popup_3e5cfe48ce008022d54aa44ccf498e55.setContent(html_d0faa987d2250af30a22491e5136241c);
+        
+
+        circle_76a54fa8c0ea02ca7ff116ac27651135.bindPopup(popup_3e5cfe48ce008022d54aa44ccf498e55)
+        ;
+
+        
+    
+    
+            var circle_a472aadd44a3af81a330b12b9a5d5bac = L.circle(
+                [40.09913563653867, -88.2203734177558],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 61.68235294117647, "stroke": true, "weight": 3}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+        var popup_9510bf4d95f800b4e95915a3fcdc5629 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3f742dc8338366f9863e7eca4d891168 = $(`<div id="html_3f742dc8338366f9863e7eca4d891168" style="width: 100.0%; height: 100.0%;">Trelease Hall: 5243</div>`)[0];
+            popup_9510bf4d95f800b4e95915a3fcdc5629.setContent(html_3f742dc8338366f9863e7eca4d891168);
+        
+
+        circle_a472aadd44a3af81a330b12b9a5d5bac.bindPopup(popup_9510bf4d95f800b4e95915a3fcdc5629)
+        ;
+
+        
+    
+    
+            var circle_ab5a0dcf84e875ec8eba9491ac51aa4e = L.circle(
+                [40.10958999761764, -88.22170149985071],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 45.43529411764706, "stroke": true, "weight": 3}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+        var popup_5c7b3a9e55913e00de575f68ebdac523 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8b68ce37eee54f7dd79d582fe1891c93 = $(`<div id="html_8b68ce37eee54f7dd79d582fe1891c93" style="width: 100.0%; height: 100.0%;">Wardell Hall: 3862</div>`)[0];
+            popup_5c7b3a9e55913e00de575f68ebdac523.setContent(html_8b68ce37eee54f7dd79d582fe1891c93);
+        
+
+        circle_ab5a0dcf84e875ec8eba9491ac51aa4e.bindPopup(popup_5c7b3a9e55913e00de575f68ebdac523)
+        ;
+
+        
+    
+    
+            var circle_10c0d6e2d93660de8633e0b352ee47da = L.circle(
+                [40.10399018569615, -88.23820096008505],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.8, "stroke": true, "weight": 3}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+        var popup_1fdc4be618e60f6976939a0c457cb920 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8878b9ecffa0e108f5e13816de196202 = $(`<div id="html_8878b9ecffa0e108f5e13816de196202" style="width: 100.0%; height: 100.0%;">Wassaja Hall: 1428</div>`)[0];
+            popup_1fdc4be618e60f6976939a0c457cb920.setContent(html_8878b9ecffa0e108f5e13816de196202);
+        
+
+        circle_10c0d6e2d93660de8633e0b352ee47da.bindPopup(popup_1fdc4be618e60f6976939a0c457cb920)
+        ;
+
+        
+    
+    
+            var circle_4606d96f377605561ca5f535f3dab17a = L.circle(
+                [40.103306624966976, -88.23523598707338],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.023529411764706, "stroke": true, "weight": 3}
+            ).addTo(map_ef46960d5485ccc62b67c97e3da78129);
+        
+    
+        var popup_eb5c0627701317f2cd1503a5198054fc = L.popup({"maxWidth": "100%"});
+
+        
+            var html_548b615bc8241fd4f654e69a923d11d7 = $(`<div id="html_548b615bc8241fd4f654e69a923d11d7" style="width: 100.0%; height: 100.0%;">Weston Hall: 1447</div>`)[0];
+            popup_eb5c0627701317f2cd1503a5198054fc.setContent(html_548b615bc8241fd4f654e69a923d11d7);
+        
+
+        circle_4606d96f377605561ca5f535f3dab17a.bindPopup(popup_eb5c0627701317f2cd1503a5198054fc)
+        ;
+
+        
+    
+</script>

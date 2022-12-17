@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block content %}
+<div class="card mb-5">
+  <div class="card-body">
+    <div id="message"></div>
+    <form class="d-flex" method="get" action="{{ url_for('join_group') }}">
+      <input class="form-control me-2" type="search" placeholder="Search for groups..." aria-label="Search" name="group">
+      <button class="btn btn-success d-flex me-2" id="search_groups_button" type="submit">Search</button>
+    </form>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Group Name</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for g in grps %}
+        <tr id="table-row-{{ g.GroupID }}">
+          <td class="align-middle">{{ g.GroupName }}</td>
+          <td class="align-middle">
+            <button type="button" class="btn btn-outline-success d-flex me-2 btn-block" data-bs-toggle="modal" data-bs-target="#confirmModal" data-bs-gid="{{ g.GroupID }}" data-bs-grp-name="{{ g.GroupName }}">Join</button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- JOIN CONFIRMATION-->
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmModalLabel">Join Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p></p>
+        <form id="join_group_form" onsubmit="return join_group(event);">
+          <button type="button" class="btn btn-outline-secondary me-2" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-outline-success me-2" data-bs-dismiss="modal">Confirm</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- JOIN CONFIRMATION -->
+<script src="/static/js/group.js"></script>
+{% endblock %}

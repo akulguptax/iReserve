@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block content %}
+<div class="card my-3">
+  <div class="card-body">
+    <h3>Your Groups</h3>
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      {% for group in user_groups %}
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-heading{{ loop.index }}">
+          <button class="accordion-button {% if not loop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse{{ loop.index }}" aria-expanded="true" aria-controls="panelsStayOpen-collapse{{ loop.index }}">
+            {{ group['name'] }}
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapse{{ loop.index }}" class="accordion-collapse collapse {% if loop.first %}show{% endif %}" aria-labelledby="panelsStayOpen-heading{{ loop.index }}">
+          <div class="accordion-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for u in group['users'] %}
+                <tr>
+                  <td>{{ u.FirstName }} {{ u.LastName }}</td>
+                  <td>{{ u.Email }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+
+  </div>
+</div>
+{% endblock %}

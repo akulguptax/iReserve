@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block content %}
+{% if not is_admin %}
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Access Denied</h4>
+  <p>Please login as a user with administrative access to view the contents of this page.</p>
+  <hr>
+  <p class="mb-0">This page contains utilities only available to administrators.</p>
+</div>
+{% else %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            Update Star Ratings  
+            <span id="stored-procedure-success-indicator" class="" hidden></span>
+          </h5>
+          <p class="card-text">Run the <code>stored procedure</code> that recomputes room ratings and assigns anywhere from a 1 to a 5 star rating to each room.</p>
+          <div class="row">
+            <div class="col justify-content-md-center px-2 mx-2">
+              <div class="row">
+                  <button id="stored-procedure-button" class="btn btn-primary btn-block" type="button" onclick="call_stored_procedure(event)">
+                    <span id="stored-procedure-spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span>
+                    <span id="stored-procedures-status-text">Compute</span>
+                  </button>
+              </div>
+            </div>
+            <div class="col justify-content-md-center px-2 mx-2">
+              <div class="row">
+                <a href="/rooms" class="btn btn-primary btn-block" type="button">
+                  <span>View Ratings</span>
+                </a>
+              </div>
+            </div> 
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">View All Users</h5>
+          <p class="card-text">Manage all users registered with iReserve. This page displays all users' names and emails.</p>
+          <div class="row justify-content-md-center px-2 my-3">
+            <a href="/users" class="btn btn-primary btn-block">Go</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">View All Reservations</h5>
+          <p class="card-text">Manage all reservations logged with iReserve. This page displays locations, times, and the reserver name.</p>
+          <div class="row justify-content-md-center px-2 my-3">
+            <a href="/reservations/all" class="btn btn-primary btn-block">Go</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">View Priority Users</h5>
+          <p class="card-text">Manage priority users registered with iReserve. Priority users are registered in a 400-level CS class or have more than 40 reservations.</p>
+          <div class="row justify-content-md-center px-2 my-3">
+            <a href="/users?priority=true" class="btn btn-primary btn-block">Go</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/static/js/admin.js"></script>
+{% endif %}
+{% endblock %}

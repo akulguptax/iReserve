@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block content %}
+<div class="card mb-5">
+  <div class="card-body">
+    <div id="message" class="" role="alert"></div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Building</th>
+          <th scope="col">Room</th>
+          <th scope="col">Reserver</th>
+          <th scope="col">Associated Group</th>
+          <th scope="col">Start Time</th>
+          <th scope="col">End Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in queried_reservations %}
+        <tr id="table-row-{{ r.ReservationID }}">
+          <td class="align-middle">{{ r.BuildingName }}</td>
+          <td class="align-middle">{{ r.RoomNumber }}</td>
+          <td class="align-middle">{{ r.FirstName }} {{ r.LastName }}</td>
+          <td class="align-middle" id="table-group-entry-{{ r.ReservationID }}">{{ r.GroupName }}</td>
+          <td class="align-middle">{{ r.StartTime }}</td>
+          <td class="align-middle">{{ r.EndTime }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+{% block search_bar %}
+{% endblock %}
