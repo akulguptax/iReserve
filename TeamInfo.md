@@ -1,4 +1,4 @@
-# Team049-PreQL Team
+# PreQL Team
 
 ## Basic Information
 
@@ -20,7 +20,7 @@
 |   Info      |        Description     |
 | ----------- | ---------------------- |
 |  Title      |       iReserve         |
-| System URL (Azure)  |      http://ireserve.neilkaushikkar.com/    |
+| System URL (Azure)  |          |
 | System URL (GCP)  |      https://ireserve-yurmzut6wq-uc.a.run.app/    |
 | Video Link  |      link_to_video     |
 
