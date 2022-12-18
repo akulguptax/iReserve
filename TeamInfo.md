@@ -4,7 +4,6 @@
 
 |   Info      |        Description     |
 | ----------- | ---------------------- |
-| TeamID      |       Team-049         |
 | TeamName    |        PreQL           |
 | Captain     |       Akul Gupta       |
 | Captain     |    akulg3@illinois.edu |
@@ -20,9 +19,8 @@
 |   Info      |        Description     |
 | ----------- | ---------------------- |
 |  Title      |       iReserve         |
-| System URL (Azure)  |          |
+| System URL (Azure)  |     -     |
 | System URL (GCP)  |      https://ireserve-yurmzut6wq-uc.a.run.app/    |
-| Video Link  |      link_to_video     |
 
 ## Project Summary
 
